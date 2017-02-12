@@ -5,6 +5,12 @@
   "author": "Christian Duffett <duffett@gmail.com>",
   "private": true,
   "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -72,5 +78,9 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   }
 }
