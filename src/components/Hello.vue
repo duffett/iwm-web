@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Welcome to IWM!!!</h1>
+    <h1>Welcome to IWM</h1>
     <label for="invoice-number">Invoice #: </label>
     <input v-model="invoiceNumber" name="invoice-number" placeholder="edit me">
     <button @click="getInvoiceData">Get Data</button>
