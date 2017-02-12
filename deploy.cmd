@@ -100,7 +100,9 @@ call :SelectNodeVersion
 :: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd !NPM_CMD! install --production
+  :: remove --production option as directed by 
+  :: https://shellmonger.com/2015/08/29/continuous-deployment-nodejs-and-microsoft-azure/
+  call :ExecuteCmd !NPM_CMD! install 
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
