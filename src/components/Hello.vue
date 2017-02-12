@@ -1,6 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>Welcome to IWM</h1>
+    <label for="invoice-number">Invoice #: </label>
+    <input v-model="invoiceNumber" name="invoice-number" placeholder="edit me">
+    <button @click="getInvoiceData">Get Data</button>
+    <p>{{message}}</p>
+    <h2>IWM Links</h2>
+    <li><a href="http://qb.iwminc.com/" target="_blank">QuickBooks</a></li>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -19,35 +25,45 @@
     </ul>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default {
+    data() { // eslint-disable-line space-before-function-paren
+      return {
+        message: '',
+        invoiceNumber: null
+      }
+    },
+    methods: {
+      getInvoiceData: function (message, event) {
+        // now we have access to the native event
+        if (event) {
+          event.preventDefault()
+        }
+        this.message = 'retrieve data for invoice ' + this.invoiceNumber
+      }
     }
   }
-}
-</script>
 
+</script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
+  h1,
+  h2 {
+    font-weight: normal;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  a {
+    color: #42b983;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
