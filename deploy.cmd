@@ -107,9 +107,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-call :ExecuteCmd !NPM_CMD! run build 
-IF !ERRORLEVEL! NEQ 0 goto error
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
 

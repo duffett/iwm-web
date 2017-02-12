@@ -39,7 +39,11 @@
         if (event) {
           event.preventDefault()
         }
-        this.message = 'retrieve data for invoice ' + this.invoiceNumber
+        if (!this.invoiceNumber) {
+          this.message = 'please provide an invoice number'
+        } else {
+          this.message = 'retrieve data for invoice ' + this.invoiceNumber
+        }
       }
     }
   }

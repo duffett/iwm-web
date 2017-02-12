@@ -1,0 +1,29 @@
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+
+h1[data-v-aded0b8a],
+h2[data-v-aded0b8a] {
+  font-weight: normal;
+}
+ul[data-v-aded0b8a] {
+  list-style-type: none;
+  padding: 0;
+}
+li[data-v-aded0b8a] {
+  display: inline-block;
+  margin: 0 10px;
+}
+a[data-v-aded0b8a] {
+  color: #42b983;
+}
+
+
+/*# sourceMappingURL=app.41b4337baf743a1e1ee2af0da7e88a9a.css.map*/
